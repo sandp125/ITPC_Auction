@@ -1,0 +1,45 @@
+{
+   "chainName":"fabric-client1",
+   "chaincodeID":"myar1",
+   "channelID":"myc1",
+   "goPath":"../art/artchaincode",
+   "chaincodePath":"github.com",
+   "keyValueStore":"/tmp/fabric-client-kvs",
+   "waitTime":"30000",
+   "caserver":{
+      "ca_url":"http://localhost:8054"
+   },
+   "orderer":{
+      "orderer_url":"grpc://localhost:8050"
+   },
+   "peers":[
+      {
+         "peer_url":"grpc://localhost:8051"
+      }
+   ],
+   "events":[
+      {
+         "event_url":"grpc://localhost:8053"
+      }
+   ],
+   "users":[
+      {
+         "username":"admin",
+         "secret":"adminpw"
+      }
+   ],
+   "deployRequest":{
+      "functionName":"init",
+      "args":[]
+   },
+   "invokeRequest":{
+      "functionName":"iPostItem",
+      "args":["1000", "ARTINV", "Shadows by Asppen", "Asppen Messer", "20140202", "Original", "landscape", "Canvas", "15 x 15 in", "art1.png","600", "100", "2017-01-23 14:04:05"]
+   },
+   "queryRequest":{
+      "functionName":"qGetItem",
+      "args":[
+        "1000"
+      ]
+   }
+}
